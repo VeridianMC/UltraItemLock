@@ -19,6 +19,11 @@ public class LockCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (!sender.hasPermission("itemlock.lock")) {
+            sender.sendMessage(plugin.getConfig().getString("messages.no_permission"));
+            return false;
+        }
+        
         if (!(sender instanceof Player)) {
             sender.sendMessage(plugin.getConfig().getString("messages.must_be_player"));
             return false;
