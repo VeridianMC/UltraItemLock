@@ -6,10 +6,12 @@ commands:
   lock:
     description: Lock an item in hand
     usage: /lock
+    permission: itemlock.lock
     aliases: [slotlock, lockslot]
   unlock:
     description: Unlock an item in hand
     usage: /unlock
+    permission: itemlock.unlock
     aliases: [slotunlock, unlockslot]
   ultraitemlockreload:
     description: Reload the plugin configuration.
@@ -20,4 +22,10 @@ commands:
 permissions:
   itemlock.reload:
     description: Allows a player to execute administrative commands for Itemlock
+    default: op
+  itemlock.lock:
+    description: Allows a player to lock an item with /lock
+    default: op
+  itemlock.unlock:
+    description: Allows a player to unlock an item with /unlock
     default: op
